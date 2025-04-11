@@ -1,0 +1,140 @@
+@font-face {
+    font-family: 'GoogleFont';
+    src: url('./Product\ Sans\ Regular.ttf') format('ttf');
+  }
+  
+
+#particles canvas{
+  z-index: -1;
+  height: 50%;
+  width: 100%;
+  position: absolute;
+}
+
+input::placeholder{
+  padding: 6px;
+  font-family:'Trebuchet MS';
+  font-size: 15px;
+  color: "#4556a4";
+}
+
+input:focus {
+  &::-webkit-input-placeholder {
+     color: transparent;
+     -webkit-transition: color 0.2s ease;
+     transition: color 0.2s ease;
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+     color: transparent;
+     -webkit-transition: color 0.2s ease;
+     transition: color 0.2s ease;
+  }
+
+  &::-moz-placeholder {  /* Firefox 19+ */
+     color: transparent;
+     -webkit-transition: color 0.2s ease;
+     transition: color 0.2s ease;
+  }
+
+  &:-ms-input-placeholder {  
+     color: transparent;
+     -webkit-transition: color 0.2s ease;
+     transition: color 0.2s ease;
+  }
+}
+
+h2{
+  font-family: 'Roboto Slab';
+}
+
+#email-form{
+  height: 50%;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#submit{
+  font-size: 15px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.signUp{
+  color: rgb(65, 65, 247);
+  cursor: pointer;
+}
+
+#signUpSubmit{
+  visibility:hidden;
+}
+
+
+
+
+
+
+
+
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+#container0 {
+  width: 310px;  /* Match login form size */
+  height: 310px; /* Reduce excess height */
+  padding: 3px;
+  border-radius: 10px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1; /* Ensure it's on top */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  width: 300px;
+  height: 320px; /* Slightly smaller than #container0 */
+  text-align: center;
+  padding: 20px;
+  z-index: 2; /* Ensures it's above #container0 */
+  background: black;
+  border-radius: 10px;
+}
+
+
+
+#container0::after, #container0::before{
+  
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(from var(--angle), black 40%, white);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 3px;
+  border-radius: 10px;
+  animation: 3s spin linear infinite;
+}
+
+#container0::before{
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+
+@keyframes spin{
+  from{
+    --angle: 0deg;
+  }
+  to{
+    --angle: 360deg; 
+  }
+}
